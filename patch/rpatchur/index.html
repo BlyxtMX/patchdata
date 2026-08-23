@@ -39,7 +39,8 @@
     .icon-button:hover { color: #fff; border-color: rgba(239,189,85,.55); background: rgba(18,40,66,.8); }
     .hero { position: relative; z-index: 1; display: flex; height: calc(100% - 66px); align-items: center; }
     .identity { width: 48%; text-align: center; padding: 0 26px 15px 0; }
-    .logo { display: block; width: 100%; max-width: 430px; max-height: 355px; margin: 0 auto; object-fit: contain; filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)); }
+    .logo { display: block; width: 100%; max-width: 430px; max-height: 355px; margin: 0 auto; object-fit: contain; filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)); transform-origin: center; transition: transform .35s ease, filter .35s ease; }
+    .logo:hover { transform: translateY(-3px) scale(1.025); animation: logo-glow 1.7s ease-in-out infinite; }
     .tagline { margin: -3px 0 0; color: #89a2ba; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; }
     .panel {
       width: 52%; max-width: 430px; margin-left: auto; padding: 31px;
@@ -98,8 +99,12 @@
       0%, 20% { transform: rotate(0deg); }
       72%, 100% { transform: rotate(360deg); }
     }
+    @keyframes logo-glow {
+      0%, 100% { filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)) drop-shadow(0 0 7px rgba(234,174,61,.34)) drop-shadow(0 0 9px rgba(35,142,231,.22)); }
+      50% { filter: drop-shadow(0 24px 31px rgba(0,0,0,.46)) drop-shadow(0 0 16px rgba(247,198,90,.70)) drop-shadow(0 0 20px rgba(42,162,255,.48)); }
+    }
     @media (prefers-reduced-motion: reduce) {
-      .button, .button svg, .play:not(:disabled) { animation: none; transition: none; }
+      .button, .button svg, .play:not(:disabled), .logo:hover { animation: none; transition: none; }
     }
     .footer { position: absolute; right: 34px; bottom: 15px; color: #42586d; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
     @media (max-width: 720px) {
