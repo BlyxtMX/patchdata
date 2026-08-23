@@ -43,7 +43,7 @@
         $(document).ready(function () {
             external.invoke('start_update');
         });
-        function patchingStatusListo() {
+        function patchingStatusReady() {
             $("#download-progress-bar")
                 .css("width", "100%")
                 .attr("aria-valuenow", "100")
@@ -64,7 +64,7 @@
             $("#download-progress-text").text("Failure: " + errorMsg);
         }
 
-        function patchingStatusDescargando(nbDownloaded, nbTotal, bytesPerSec) {
+        function patchingStatusDownloading(nbDownloaded, nbTotal, bytesPerSec) {
             var percentage = (100 * nbDownloaded) / nbTotal;
             if (bytesPerSec > 0) {
                 var downloadSpeed = " - " + humanFileSize(bytesPerSec) + "/s";
@@ -78,7 +78,7 @@
             $("#download-progress-text").text("Descargando: " + nbDownloaded + "/" + nbTotal + downloadSpeed);
         }
 
-        function patchingStatusInstalando(nbInstalled, nbTotal) {
+        function patchingStatusInstalling(nbInstalled, nbTotal) {
             var percentage = (100 * nbInstalled) / nbTotal;
             $("#download-progress-bar").css("width", percentage + "%").attr("aria-valuenow", percentage)
                 .removeClass("bg-success")
