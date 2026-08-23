@@ -1,0 +1,3 @@
+// Agrega aquí tus parches sin las barras iniciales.
+// Ejemplo: 1 001-ropv.thor
+1 23082026-01-01.thor

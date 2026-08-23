@@ -1,0 +1,18 @@
+[Main]
+allow=true
+Force_Start=false
+policy_msg=El servidor de actualizaciones está en mantenimiento.
+file_url=http://ropuertovallarta.tailb84701.ts.net/patchdata/data/
+
+[Patch]
+ClientSum=
+PatcherSum=
+ClientPath=
+PatcherPath=
+PatchList=plist.txt
+
+[Stars]
+clients=0
+
+[Misc]
+FragmentLimit=50
