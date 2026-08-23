@@ -40,7 +40,7 @@
     .hero { position: relative; z-index: 1; display: flex; height: calc(100% - 66px); align-items: center; }
     .identity { width: 48%; text-align: center; padding: 0 26px 15px 0; }
     .logo { display: block; width: 100%; max-width: 430px; max-height: 355px; margin: 0 auto; object-fit: contain; filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)); transform-origin: center; transition: transform .35s ease, filter .35s ease; }
-    .logo:hover { transform: translateY(-3px) scale(1.025); animation: logo-glow 1.7s ease-in-out infinite; }
+    .logo:hover, .identity:hover .logo { transform: translateY(-3px) scale(1.025); animation: logo-glow 1.7s ease-in-out infinite; }
     .tagline { margin: -3px 0 0; color: #89a2ba; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; }
     .panel {
       width: 52%; max-width: 430px; margin-left: auto; padding: 31px;
@@ -54,7 +54,7 @@
     .progress-bar { width: 0; height: 100%; border-radius: 7px; background: linear-gradient(90deg, #156fbd, #3cb8ff); box-shadow: 0 0 16px rgba(42,159,229,.45); transition: width .25s ease; }
     .status-row { display: flex; justify-content: space-between; margin: 10px 0 28px; color: #738ba2; font-size: 11px; }
     .status-row strong { color: #a9bdd0; font-weight: 500; }
-    .actions { display: flex; gap: 16px; }
+    .actions { display: flex; }
     .button { position: relative; height: 44px; overflow: hidden; border-radius: 11px; cursor: pointer; transition: transform .18s ease, filter .18s ease, border-color .18s ease, box-shadow .18s ease; }
     .button svg { overflow: visible; transition: transform .35s ease, filter .25s ease; transform-origin: center; }
     .button:active { transform: translateY(1px) scale(.97); }
@@ -73,7 +73,7 @@
     .play:not(:disabled) svg { animation: bow-alive 2.4s ease-in-out infinite; }
     .play:not(:disabled) .icon-spark { animation: icon-sparkle 1.6s ease-in-out infinite; transform-origin: 18px 5px; }
     .play:disabled { color: #607081; border-color: #243b51; background: #162a3d; box-shadow: none; cursor: default; transform: none; }
-    .secondary { width: 48px; border: 1px solid rgba(151,181,211,.2); color: #9cb3c8; background: rgba(18,38,58,.7); }
+    .secondary { width: 48px; margin-left: 16px; border: 1px solid rgba(151,181,211,.2); color: #9cb3c8; background: rgba(18,38,58,.7); }
     .secondary:hover { color: #fff; border-color: rgba(239,189,85,.7); background: rgba(29,58,86,.92); box-shadow: 0 8px 20px rgba(0,0,0,.28), 0 0 14px rgba(33,145,220,.16); transform: translateY(-2px); }
     .secondary[title="Configuración"] svg { animation: gear-turn 5s linear infinite; }
     .secondary[title="Configuración"]:hover svg { animation-duration: 1.4s; filter: drop-shadow(0 0 4px rgba(239,189,85,.7)); }
