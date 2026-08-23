@@ -38,8 +38,17 @@
     }
     .icon-button:hover { color: #fff; border-color: rgba(239,189,85,.55); background: rgba(18,40,66,.8); }
     .hero { position: relative; z-index: 1; display: flex; height: calc(100% - 66px); align-items: center; }
-    .identity { width: 48%; text-align: center; padding: 0 26px 15px 0; }
-    .logo { display: block; width: 100%; max-width: 430px; max-height: 355px; margin: 0 auto; object-fit: contain; filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)); transform-origin: center; transition: transform .35s ease, filter .35s ease; }
+    .identity { position: relative; z-index: 1; width: 48%; text-align: center; padding: 0 26px 15px 0; }
+    .identity:before {
+      content: ""; position: absolute; z-index: -1; left: 50%; top: 47%; width: 72%; height: 55%;
+      margin-left: -39%; margin-top: -28%; border-radius: 50%; opacity: 0;
+      background: radial-gradient(ellipse at center, rgba(255,206,96,.48) 0%, rgba(41,157,255,.30) 34%, rgba(19,82,145,.12) 56%, transparent 73%);
+      box-shadow: 0 0 35px rgba(246,190,76,.34), 0 0 70px rgba(31,143,233,.28);
+      transform: scale(.82); transition: opacity .35s ease, transform .35s ease;
+      pointer-events: none;
+    }
+    .identity:hover:before { opacity: 1; transform: scale(1.08); animation: halo-pulse 1.7s ease-in-out infinite; }
+    .logo { position: relative; z-index: 1; display: block; width: 100%; max-width: 430px; max-height: 355px; margin: 0 auto; object-fit: contain; filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)); transform-origin: center; transition: transform .35s ease, filter .35s ease; }
     .logo:hover, .identity:hover .logo { transform: translateY(-3px) scale(1.025); animation: logo-glow 1.7s ease-in-out infinite; }
     .tagline { margin: -3px 0 0; color: #89a2ba; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; }
     .panel {
@@ -102,6 +111,10 @@
     @keyframes logo-glow {
       0%, 100% { filter: drop-shadow(0 22px 30px rgba(0,0,0,.42)) drop-shadow(0 0 7px rgba(234,174,61,.34)) drop-shadow(0 0 9px rgba(35,142,231,.22)); }
       50% { filter: drop-shadow(0 24px 31px rgba(0,0,0,.46)) drop-shadow(0 0 16px rgba(247,198,90,.70)) drop-shadow(0 0 20px rgba(42,162,255,.48)); }
+    }
+    @keyframes halo-pulse {
+      0%, 100% { opacity: .62; transform: scale(.96); box-shadow: 0 0 28px rgba(246,190,76,.30), 0 0 58px rgba(31,143,233,.24); }
+      50% { opacity: 1; transform: scale(1.12); box-shadow: 0 0 48px rgba(255,207,98,.62), 0 0 92px rgba(42,162,255,.46); }
     }
     @media (prefers-reduced-motion: reduce) {
       .button, .button svg, .play:not(:disabled), .logo:hover { animation: none; transition: none; }
