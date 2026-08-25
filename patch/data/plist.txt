@@ -1,7 +1,6 @@
 // Agrega aquí tus parches sin las barras iniciales.
 // Ejemplo: 1 001-ropv.thor
-1 23082026-01-01.thor
-2 23082026-01-02.thor
 3 23082026-01-03.thor
 4 23082026-01-04.thor
 5 23082026-01-05.thor
+6 25082026-01-06.thor
